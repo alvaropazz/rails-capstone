@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_13_025134) do
+ActiveRecord::Schema.define(version: 2020_06_13_040526) do
+
+  create_table "groupings", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "project_id"
+    t.integer "group_id"
+    t.index ["group_id"], name: "index_groupings_on_group_id"
+    t.index ["project_id"], name: "index_groupings_on_project_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -33,5 +42,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_025134) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "groupings", "groups"
+  add_foreign_key "groupings", "projects"
   add_foreign_key "projects", "users", column: "author_id"
 end
