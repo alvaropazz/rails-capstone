@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find(name: params[:name])
+    @user = User.where(name: params[:name]).first
     if @user
       session[:user_id] = @user.id
       redirect_to root_path
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   end
 
   private
-    def login(user)
+    def login(_user)
       session[:user_id] = nil
     end
 end
