@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :login_required
+
   def index
     @user = current_user ? current_user.name : 'Guest'
   end
@@ -21,15 +23,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    if @user
-      @created_events = @user.events
-      @user_past_events = @created_events.past_date
-      @user_upcoming_events = @created_events.upcoming_date
-      @user_invites = @user.invites
-    else
-      flash[:alert] = 'User does not exist!'
-      redirect_to signup_path
-    end
   end
 
   private

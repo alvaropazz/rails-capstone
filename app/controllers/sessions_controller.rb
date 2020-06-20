@@ -1,10 +1,12 @@
 class SessionsController < ApplicationController
+  skip_before_action :login_required
+
   def new
     @user = User.new
   end
 
   def create
-    @user = User.where(name: params[:name]).first
+    @user = User.find(name: params[:name])
     if @user
       session[:user_id] = @user.id
       redirect_to root_path

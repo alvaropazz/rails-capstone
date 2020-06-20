@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <ul class = "navbar">
+          <li><%= link_to "Home", root_path%></li>
+         <%= menu_action %>
+        </ul>
+      </nav>
+    </header>
+    <% flash.each do |type,  msg| %>
+      <p style="color: red"><%= msg %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
