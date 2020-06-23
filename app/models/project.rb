@@ -6,4 +6,13 @@ class Project < ApplicationRecord
   def self.creator(event)
     User.where(id: project.author_id).first
   end
+
+  def group 
+    groups.first
+  end
+
+  def group=(group)
+    g = Group.find_by(name: group)
+    groups << g if g
+  end
 end
