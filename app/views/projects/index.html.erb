@@ -1,0 +1,34 @@
+<header class="header">
+  <div class="back-icon">
+    <h2>
+    <%= link_to user_url(current_user) do %>
+      <i class="fas fa-bars"></i>
+    <% end %>
+  </h2>
+  </div>
+  <div class="section-title">
+    <h2>All Projects</h2>
+  </div>
+</header>
+
+<main class="container">
+  <div class="projects-all">
+    <% @projects.each do |pr| %>
+    <div class="projects-list">
+      <div class ="project-description">
+        <p class="project-name"><%= pr.name %></p>
+        <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+      </div>
+      <div class="project-numbers">
+        <p class="project-amount"><%= pr.amount %></p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="create">
+    <%= link_to "New Project", new_project_path, class: "new-project" %>
+  </div>
+</footer>

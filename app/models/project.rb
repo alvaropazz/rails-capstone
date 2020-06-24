@@ -3,10 +3,6 @@ class Project < ApplicationRecord
   has_many :groupings, dependent: :destroy
   has_many :groups, through: :groupings
 
-  def self.creator(event)
-    User.where(id: project.author_id).first
-  end
-
   def group 
     groups.first
   end

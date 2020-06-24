@@ -1,0 +1,17 @@
+<%= form_with model: @project do |f| %>
+  <header>
+    <h2 class="title">Log project</h2>
+    <%= link_to user_url(current_user) do %>
+      <i class="fas fa-arrow-left nav__icon"></i>
+    <% end %>
+    <%= f.submit "Save" %>
+  </header>
+  <ul>
+    <% @project.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+    <div>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+<% end %>

@@ -1,9 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :login_required, only: %i[new create]
-  def show
-    @project = Project.find(params[:id])
-    @project_creator = Project.creator(@project)
-  end
+  # def show
+  #   @project = Project.find(params[:id])
+  # end
 
   def index
     @projects = Project.all
@@ -16,7 +15,7 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
-      redirect_to project_path(@project)
+      redirect_to projects_path
     else
       redirect_to new_project_path
     end
