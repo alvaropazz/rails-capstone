@@ -13,14 +13,9 @@
 
 <main class="submit-form">
   <%= form_with model: @project do |x| %>
-    <h3 class="submit-subtitles">Name:</h3>
     <%= x.text_field :name, required: true, class:"submit-field" %>
     <br>
-    <h3 class="submit-subtitles">Group:</h3>
-    <%= x.select(:group, options_for_select(Group.all.map  {|x| x.name}),{include_blank: true }, {class: "submit-options"})%>
-    <br>
-    <h3 class="submit-subtitles">Number of hours:</h3>
-    <%= x.number_field :amount, required: true, class: "submit-amount" %>
+    <%= select_tag(:group, options_for_select(Group.all.map  {|x| x.name}), {class: "submit-options"})%>
     <br>
     <%= x.submit "Save", class:"save-button" %>
     <% @project.errors.full_messages.each do |error| %>
