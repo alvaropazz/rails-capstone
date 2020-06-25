@@ -14,18 +14,18 @@
 <main class="container">
   <div class="projects-all">
     <% @projects.each do |pr| %>
-    <div class="projects-list">
-      <div class ="project-description">
-        <%= link_to project_path(pr) do %>
-          <p class="project-name"><%= pr.name %></p>
-        <% end %>
-        <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+      <div class="projects-list">
+        <div class ="project-description">
+          <%= link_to project_path(pr) do %>
+            <p class="project-name"><%= pr.name %></p>
+          <% end %>
+          <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+        </div>
+        <div class="project-numbers">
+          <p class="project-amount"><%= pr.amount %></p>
+        </div>
       </div>
-      <div class="project-numbers">
-        <p class="project-amount"><%= pr.amount %></p>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
   </div>
 </main>
 

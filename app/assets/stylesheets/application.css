@@ -92,3 +92,17 @@
   background-color: #5FAD56;
   color: #FFBC42;
 }
+
+.submit-options {
+  margin-bottom: 100px;
+  font-size: 40px;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+select {
+	appearance:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+  -ms-appearance:none;
+}

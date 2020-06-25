@@ -11,7 +11,21 @@
   </div>
 </header>
 
+<main class="container">
+  <div class="projects-all">
+    <% @group.projects.each do |pr| %>
+      <div class ="group-list">
+        <%= link_to project_path(pr) do %>
+          <p class="project-name"><%= pr.name %></p>
+        <% end %>
+        <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+      </div>
+    <% end %>
+  </div>
+</main>
 
-<div class="new">
-  <%= link_to "Add new", new_project_path, class: "save-button" %>
-</div>
+<footer class="footer">
+  <div class="new">
+    <%= link_to "Add new", new_project_path, class: "save-button" %>
+  </div>
+</footer>

@@ -14,8 +14,12 @@
 <main class="submit-form">
   <%= form_with model: @project do |x| %>
     <%= x.text_field :name, required: true, class:"submit-field" %>
-    <%= select_tag(:group, options_for_select(Group.all.map {|x| x.name}))%>
+    <br>
+    <%= select_tag(:group, options_for_select(Group.all.map  {|x| x.name}), {class: "submit-options"})%>
     <br>
     <%= x.submit "Save", class:"save-button" %>
+    <% @project.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
   <% end %>
 </main>
