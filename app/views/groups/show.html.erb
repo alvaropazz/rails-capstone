@@ -11,18 +11,6 @@
   </div>
 </header>
 
-<main class="group-container">
-  <div class="each-group-container">
-    <% @group.projects.each do |pr| %>
-      <div class ="project-description">
-        <%= link_to project_path(pr) do %>
-          <p class="project-name"><%= pr.name %></p>
-        <% end %>
-        <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
-      </div>
-    <% end %>
-  </div>
-</main>
 
 <div class="new">
   <%= link_to "Add new", new_project_path, class: "save-button" %>
