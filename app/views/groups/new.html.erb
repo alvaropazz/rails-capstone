@@ -11,13 +11,10 @@
   </div>
 </header>
 
-<div class="submit-form">
-  <%= form_with model: @group do |f| %>
-    <%= f.text_field :name, required: true, placeholder: "Name", class:"submit-field" %>
+<main class="submit-form">
+  <%= form_with model: @group do |x| %>
+    <%= x.text_field :name, required: true, class:"submit-field" %>
     <br>
-    <%= f.submit "Save", class:"save-button" %>
-    <% @group.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
+    <%= x.submit "Save", class:"save-button" %>
   <% end %>
-</div>
+</main>

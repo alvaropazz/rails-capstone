@@ -11,22 +11,14 @@
   </div>
 </header>
 
-<main class="sessions">
-  <div class="sessions__list">
-    <% @group.projects.each do |s| %>
-      <div class="sessions__list__item">
-        <div class="item">
-          <div>
-            <h4><%= s.name %></h4>
-            <strong><%= s.amount %></strong>
-          </div>
-          <div class="item__details">
-            <p>
-            <%# <%= s.user.name %> %>
-            </p>
-            <span><%= s.created_at.strftime('%d %b %Y') %></span>
-          </div>
-        </div>
+<main class="group-container">
+  <div class="each-group-container">
+    <% @group.projects.each do |pr| %>
+      <div class ="project-description">
+        <%= link_to project_path(pr) do %>
+          <p class="project-name"><%= pr.name %></p>
+        <% end %>
+        <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
       </div>
     <% end %>
   </div>

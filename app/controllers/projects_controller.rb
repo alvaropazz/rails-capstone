@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :login_required, only: %i[new create]
-  # def show
-  #   @project = Project.find(params[:id])
-  # end
+  def show
+    @project = Project.find(params[:id])
+  end
 
   def index
     @projects = Project.all
