@@ -7,4 +7,4 @@ class Project < ApplicationRecord
     project_group = Group.where(name: group).first
     groups.push(project_group) if project_group
   end
-end
+
