@@ -1,10 +1,17 @@
-<main class="sessions">
-  <header>
-    <h2 class="title"><%= @group.name %></h2>
+<header class="header">
+  <div class="back-icon">
+    <h2>
     <%= link_to groups_path do %>
-      <i class="fas fa-arrow-left nav__icon"></i>
+      <i class="fas fa-chevron-left"></i>
     <% end %>
-  </header>
+  </h2>
+  </div>
+  <div class="section-title">
+    <h2 class="title"><%= @group.name %></h2>
+  </div>
+</header>
+
+<main class="sessions">
   <div class="sessions__list">
     <% @group.projects.each do |s| %>
       <div class="sessions__list__item">
@@ -23,7 +30,8 @@
       </div>
     <% end %>
   </div>
-  <div class="new">
-     <%= link_to "Add new", new_session_path, class: "new__session" %>
-  </div>
 </main>
+
+<div class="new">
+  <%= link_to "Add new", new_project_path, class: "save-button" %>
+</div>

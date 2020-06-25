@@ -1,17 +1,23 @@
-<%= form_with model: @project do |f| %>
-  <header>
-    <h2 class="title">Log project</h2>
+<header class="header">
+  <div class="back-icon">
+    <h2>
     <%= link_to user_url(current_user) do %>
-      <i class="fas fa-arrow-left nav__icon"></i>
+      <i class="fas fa-chevron-left"></i>
     <% end %>
-    <%= f.submit "Save" %>
-  </header>
-  <ul>
+  </h2>
+  </div>
+  <div class="section-title">
+    <h2>New Project</h2>
+  </div>
+</header>
+
+<div class="submit-form">
+  <%= form_with model: @project do |f| %>
+    <%= f.text_field :name, required: true, placeholder: "Name", class:"submit-field" %>
+    <br>
+    <%= f.submit "Save", class:"save-button" %>
     <% @project.errors.full_messages.each do |error| %>
       <li><%= error %></li>
     <% end %>
-  </ul>
-    <div>
-    <%= f.text_field :name, required: true, placeholder: "Name" %>
-  </div>
-<% end %>
+  <% end %>
+</div>

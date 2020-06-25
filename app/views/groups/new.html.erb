@@ -1,18 +1,23 @@
-<%= form_with model: @group do |f| %>
-  <header>
-    <h2 class="title">Create group</h2>
-    <%= link_to groups_path do %>
-        <i class="fas fa-arrow-left nav__icon"></i>
-      <% end %>
-    <%= f.submit "Create", disable_with: 'Creating...' %>
-  </header>
-  <ul class="error_list">
+<header class="header">
+  <div class="back-icon">
+    <h2>
+    <%= link_to user_url(current_user) do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </h2>
+  </div>
+  <div class="section-title">
+    <h2>New Group</h2>
+  </div>
+</header>
+
+<div class="submit-form">
+  <%= form_with model: @group do |f| %>
+    <%= f.text_field :name, required: true, placeholder: "Name", class:"submit-field" %>
+    <br>
+    <%= f.submit "Save", class:"save-button" %>
     <% @group.errors.full_messages.each do |error| %>
       <li><%= error %></li>
     <% end %>
-  </ul>
-  <div class="form__fields">
-    <%= f.text_field :name, placeholder: "Name" %>
-  </div>
-  
-<% end %>
+  <% end %>
+</div>

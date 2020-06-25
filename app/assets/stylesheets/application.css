@@ -54,6 +54,8 @@
   color: #FFBC42;
   width: 90%;
   margin: auto;
+  justify-content: center;
+  display: flex;
 }
 
 .footer {
@@ -66,4 +68,27 @@
 
 .fas {
   margin: 0 15px;
+}
+
+.submit-form {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.submit-field {
+  font-size: 50px;
+  margin-bottom: 100px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.save-button {
+  font-size: 50px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #5FAD56;
+  color: #FFBC42;
 }

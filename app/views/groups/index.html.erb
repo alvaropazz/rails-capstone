@@ -12,14 +12,14 @@
 </header>
   
 <main class="container">
-  <div class="projects-all">
+  <div class="group-all">
     <% @groups.each do |pr| %>
-    <div class="projects-list">
-      <div class ="project-description">
+    <div class="group-list">
+      <div class ="group-description">
         <%= link_to group_path(pr), class: "link" do %>
-          <p class="project-name"><%= pr.name %></p>
+          <p class="group-name"><%= pr.name %></p>
         <% end %>
-        <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+        <span class="group-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
       </div>
     </div>
   <% end %>
@@ -28,6 +28,6 @@
   
 <footer class="footer">
   <div class="create">
-    <%= link_to "New Group", new_group_path, class: "new_group" %> 
+    <%= link_to "New Group", new_group_path, class: "new-group" %> 
   </div>
 </footer>
