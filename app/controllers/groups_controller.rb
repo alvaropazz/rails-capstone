@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
+    @group_projects = Group.all_projects(@group)
   end
 
   def index
@@ -8,11 +9,11 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
+    @group = current_user.groups.build
   end
   
   def create
-    @group = Group.new(group_params)
+    @group = current_user.groups.build(group_params)
     if @group.save
       redirect_to group_path(@group)
     else

@@ -14,10 +14,10 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.build(project_params)
-    @project.group = params[:group]
     if @project.save
-      redirect_to projects_path
+      redirect_to groups_path
     else
+      flash[:alert] = @project.errors.full_messages
       redirect_to new_project_path
     end
   end
@@ -25,6 +25,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :amount, :group)
+    params.require(:project).permit(:name, :amount, :group_id, :author_id)
   end
 end

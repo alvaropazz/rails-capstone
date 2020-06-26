@@ -13,7 +13,7 @@
 
 <main class="container">
   <div class="projects-all">
-    <% @group.projects.each do |pr| %>
+    <% @group_projects.each do |pr| %>
       <div class ="group-list">
         <%= link_to project_path(pr) do %>
           <p class="project-name"><%= pr.name %></p>

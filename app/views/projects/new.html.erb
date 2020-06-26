@@ -17,7 +17,7 @@
     <%= x.text_field :name, required: true, class:"submit-field" %>
     <br>
     <h3 class="submit-subtitles">Group:</h3>
-    <%= x.select(:group, options_for_select(Group.all.map  {|x| x.name}),{include_blank: true }, {class: "submit-options"})%>
+    <%= x.collection_select(:group_id, current_user.groups, :id, :name, {Prompt: true}, {class: "submit-options"})%>
     <br>
     <h3 class="submit-subtitles">Number of hours:</h3>
     <%= x.number_field :amount, required: true, class: "submit-amount" %>

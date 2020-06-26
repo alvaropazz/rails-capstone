@@ -78,7 +78,8 @@
 }
 
 .submit-field {
-  font-size: 50px;
+  font-size: 40px;
+  width: 50%;
   margin-bottom: 100px;
   padding: 20px;
   border-radius: 15px;
@@ -93,11 +94,22 @@
   color: #FFBC42;
 }
 
+.submit-amount {
+  margin-bottom: 100px;
+  font-size: 40px;
+  border-radius: 15px;
+  padding: 20px;
+  width: 20%;
+  text-align: center;
+}
+
 .submit-options {
   margin-bottom: 100px;
   font-size: 40px;
   border-radius: 15px;
   padding: 20px;
+  background-color: #ffffff;
+  width: 50%;
 }
 
 select {

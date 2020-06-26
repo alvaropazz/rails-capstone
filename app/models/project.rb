@@ -1,10 +1,5 @@
 class Project < ApplicationRecord
-  belongs_to :user, optional: true
-  has_many :groupings, dependent: :destroy
-  has_many :groups, through: :groupings
-
-  def group=(group)
-    project_group = Group.where(name: group).first
-    groups.push(project_group) if project_group
-  end
+  belongs_to :author, class_name: 'User'
+  has_one :groupings, foreign_key: :project_id
+  has_one :group, through: :groupings
 end
