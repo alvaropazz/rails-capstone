@@ -1,5 +1,8 @@
 class Project < ApplicationRecord
   belongs_to :author, class_name: 'User'
-  has_one :groupings, foreign_key: :project_id
+  has_one :grouping, foreign_key: :project_id
   has_one :group, through: :groupings
+
+  scope :has_group, -> { where.not('group_id IS NULL') }
+  scope :no_group, -> { where('group_id IS NULL') }
 end

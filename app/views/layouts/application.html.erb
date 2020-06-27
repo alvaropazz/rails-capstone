@@ -10,9 +10,6 @@
   </head>
 
   <body>
-    <header>
-      <li><%= link_to "Home", root_path%></li> 
-    </header>
     <% flash.each do |type,  msg| %>
       <p style="color: red"><%= msg %></p>
     <% end %>

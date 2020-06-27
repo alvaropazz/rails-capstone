@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.where(name: params[:name]).first
     if @user
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       flash[:alert] = 'Invalid name!'
       redirect_to login_path
