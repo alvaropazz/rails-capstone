@@ -5,8 +5,6 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -31,6 +29,9 @@ gem 'paperclip', '~> 6.0.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  #gem to use in development-test environment
+  gem 'sqlite3'    
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
@@ -59,3 +60,9 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'rubocop', '~>0.81.0'
+
+
+group :production do 
+  #gem to use in production environment
+  gem 'pg'         
+end
