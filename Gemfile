@@ -29,8 +29,8 @@ gem 'paperclip', '~> 6.0.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  #gem to use in development-test environment
-  gem 'sqlite3'    
+  # gem to use in development-test environment
+  gem 'sqlite3'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -61,8 +61,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'rubocop', '~>0.81.0'
 
-
-group :production do 
-  #gem to use in production environment
-  gem 'pg'         
+group :production do
+  # gem to use in production environment
+  gem 'pg'
 end
