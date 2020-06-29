@@ -15,7 +15,12 @@
   <%= form_for @group, url: groups_path, html: { multipart: true } do |form| %>
     <%= form.text_field :name, required: true, placeholder: "Name", class:"submit-field" %>
     <br>
-    <%= form.file_field :icon, required: true, placeholder: "Name", class:"submit-field" %>
+    <div class="file">
+      <label for="file-input" class="file-container">
+        Choose Icon
+      </label>
+      <%= form.file_field :icon, id:"file-input", required: true, class:"file-field" %>
+    </div>
     <br>
     <%= form.submit "Save", class:"save-button" %>
     <% @group.errors.full_messages.each do |error| %>

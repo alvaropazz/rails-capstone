@@ -125,3 +125,23 @@ select {
   font-size: 50px;
 }
 
+.file-field {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.file-container {
+  background-color: #D65108;
+  color: #F8F7FF;
+  padding: 20px;
+  font-size: 40px;
+  border-radius: 15px;
+}
+
+.file {
+  margin-bottom: 60px;
+}
