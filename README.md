@@ -31,10 +31,6 @@ Some of the features of this project include:
 - PaperClip gem.
 - RSpec for Rails gem.
 
-## Live Version
-
-[Heroku Host](https://floating-refuge-05877.herokuapp.com/)
-
 ## Screenshots
 
 ![image](https://user-images.githubusercontent.com/58086801/86052536-c4185100-ba1c-11ea-9fcd-8a6d5f642c70.png)
