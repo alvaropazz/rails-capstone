@@ -14,11 +14,11 @@
 <main class="container">
   <div class="group-all">
     <% @groups.each do |pr| %>
-      <div class="group-list">
-        <div class ="group-description">
-          <div class="list-image">
-            <%= image_tag pr.icon.url(:thumb) %>
-          </div>
+      <div class="group-list-general">
+        <div class="list-image">
+          <%= image_tag pr.icon.url(:thumb) %>
+        </div>
+        <div class ="group-description-general">
           <div class="list-description">
             <%= link_to group_path(pr) do %>
               <p class="group-name"><%= pr.name %></p>

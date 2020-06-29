@@ -19,9 +19,7 @@
     <% @projects.each do |pr| %>
       <div class="projects-list">
         <div class ="project-description">
-          <%= link_to project_path(pr) do %>
-            <p class="project-name"><%= pr.name %></p>
-          <% end %>
+          <p class="project-name"><%= pr.name %></p>
           <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
         </div>
         <div class="project-numbers">
