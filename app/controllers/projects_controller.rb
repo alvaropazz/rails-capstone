@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
-      edirect_to user_path(@user)
+      redirect_to user_path(@user)
     else
       flash[:alert] = @project.errors.full_messages
       redirect_to new_project_path
