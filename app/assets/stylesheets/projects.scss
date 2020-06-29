@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.projects-all { 
+.projects-all {
   height: 95%;
   width: 95%;
   display: flex;
@@ -17,11 +17,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #D65108;
+  color: #d65108;
 }
 
 .create {
-  background-color: #5FAD56;
+  background-color: #5fad56;
   height: 70%;
   width: 90%;
   display: flex;
@@ -32,8 +32,8 @@
 }
 
 .total-amount {
-  background-color: #F59F00 ;
-  color: #F8F7FF;
+  background-color: #f59f00;
+  color: #f8f7ff;
   margin-bottom: 25px;
   position: sticky;
 }
