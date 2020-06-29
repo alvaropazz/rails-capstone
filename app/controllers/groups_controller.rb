@@ -2,10 +2,11 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @group_projects = Group.all_projects(@group)
+    @projects_grouped = Group.all_projects(@group).sum(:amount)
   end
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
   def new
@@ -24,6 +25,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :icon)
   end
 end

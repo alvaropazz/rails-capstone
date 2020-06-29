@@ -5,7 +5,13 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = current_user.projects.has_group
+    @projects_total = current_user.projects.has_group.sum(:amount)
+  end
+
+  def external
+    @projects = current_user.projects.no_group
+    @projects_total_external = current_user.projects.no_group.sum(:amount)
   end
 
   def new

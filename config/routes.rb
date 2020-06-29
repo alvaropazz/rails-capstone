@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root to: 'users#index'
   resources :users
   resources :groups
-  resources :projects
+  resources :projects do
+    collection do
+      get :external
+    end
+  end
 
   resources :sessions, only: %i[create new destroy]
   get '/signup', to: 'users#new'

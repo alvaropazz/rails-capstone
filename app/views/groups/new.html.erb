@@ -12,10 +12,12 @@
 </header>
 
 <main class="submit-form">
-  <%= form_with model: @group do |x| %>
-    <%= x.text_field :name, required: true, placeholder: "Name", class:"submit-field" %>
+  <%= form_for @group, url: groups_path, html: { multipart: true } do |form| %>
+    <%= form.text_field :name, required: true, placeholder: "Name", class:"submit-field" %>
     <br>
-    <%= x.submit "Save", class:"save-button" %>
+    <%= form.file_field :icon, required: true, placeholder: "Name", class:"submit-field" %>
+    <br>
+    <%= form.submit "Save", class:"save-button" %>
     <% @group.errors.full_messages.each do |error| %>
       <li><%= error %></li>
     <% end %>

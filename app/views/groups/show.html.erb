@@ -13,12 +13,16 @@
 
 <main class="container">
   <div class="projects-all">
+    <div class="total-amount">
+      <p class="amount-description">  Total Hours: <%= @projects_grouped %></p>
+    </div>
     <% @group_projects.each do |pr| %>
       <div class ="group-list">
         <%= link_to project_path(pr) do %>
           <p class="project-name"><%= pr.name %></p>
         <% end %>
         <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+        <p class="project-amount"><%= pr.amount %></p>
       </div>
     <% end %>
   </div>

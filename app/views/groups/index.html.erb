@@ -16,10 +16,15 @@
     <% @groups.each do |pr| %>
       <div class="group-list">
         <div class ="group-description">
-          <%= link_to group_path(pr) do %>
-            <p class="group-name"><%= pr.name %></p>
-          <% end %>
-          <span class="group-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+          <div class="list-image">
+            <%= image_tag pr.icon.url(:thumb) %>
+          </div>
+          <div class="list-description">
+            <%= link_to group_path(pr) do %>
+              <p class="group-name"><%= pr.name %></p>
+            <% end %>
+            <span class="group-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+          </div>
         </div>
       </div>
     <% end %>

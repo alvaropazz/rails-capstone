@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_200044) do
+ActiveRecord::Schema.define(version: 2020_06_28_230544) do
 
   create_table "groupings", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -26,6 +26,10 @@ ActiveRecord::Schema.define(version: 2020_06_26_200044) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "icon_file_name"
+    t.string "icon_content_type"
+    t.integer "icon_file_size"
+    t.datetime "icon_updated_at"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
