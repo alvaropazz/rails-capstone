@@ -1,4 +1,4 @@
-# Microverse's Rails Social Media Project
+# Microverse's RoR Capstone Project
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -7,31 +7,35 @@
 
 ## About the project
 
-
-## Data Model
-
+This project implements a Project Tracker App to log projects and group them into categories.
 
 ## Requirements
 
 - Once you download the project, please make sure that you have [Ruby](https://www.ruby-lang.org/en/) installed.
-- Install `rails 5.2.3` if you haven't already. You could run the command `gem install rails -v '5.2.3'` to install rails.
+- Install `rails 6.0.3.1` if you haven't already. You could run the command `gem install rails -v '6.0.3.1'` to install rails.
 - Make sure to run `bundle` command in the terminal once you are in the working directory.
 
 ## Features
 
 Some of the features of this project include:
 
+- Creation of users
+- Creation of projects
+- Creation of groups to group projects
+- Adding icons to group categories
+- Tracking of number of hours spent on all projects and on projects grouped by category
+
 ## Technologies Used
 
 - This project utilizes the Rails framework.
+- PaperClip gem.
+- RSpec for Rails gem.
 
-<!-- 
+## Screenshots
 
-## Testing
-
-## Test Output
-
--->
+![image](https://user-images.githubusercontent.com/58086801/86052536-c4185100-ba1c-11ea-9fcd-8a6d5f642c70.png)
+![image](https://user-images.githubusercontent.com/58086801/86052726-0cd00a00-ba1d-11ea-9a59-f8dc9cb426e6.png)
+![image](https://user-images.githubusercontent.com/58086801/86052763-1bb6bc80-ba1d-11ea-81f7-206cdfb9140b.png)
 
 ## Contributors
 

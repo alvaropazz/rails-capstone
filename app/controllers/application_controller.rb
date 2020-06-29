@@ -3,8 +3,9 @@ class ApplicationController < ActionController::Base
   before_action :login_required, except: [:index]
 
   def login_required
-    return flash[:alert] = 'You need to login first!' unless logged_in?
+    return if logged_in?
 
+    flash[:alert] = 'You need to login first!'
     redirect_to new_session_path
   end
 
