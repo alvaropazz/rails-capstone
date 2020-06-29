@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2020_06_28_230544) do
   create_table "groupings", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "project_id"
-    t.integer "group_id"
+    t.bigint "project_id"
+    t.bigint "group_id"
     t.index ["group_id"], name: "index_groupings_on_group_id"
     t.index ["project_id"], name: "index_groupings_on_project_id"
   end
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_06_28_230544) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "icon_file_name"
     t.string "icon_content_type"
     t.integer "icon_file_size"
@@ -37,13 +37,12 @@ ActiveRecord::Schema.define(version: 2020_06_28_230544) do
   end
 
   create_table "projects", force: :cascade do |t|
+    t.integer "author_id"
     t.string "name"
     t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "author_id"
-    t.integer "group_id"
-    t.index ["author_id"], name: "index_projects_on_author_id"
+    t.bigint "group_id"
     t.index ["group_id"], name: "index_projects_on_group_id"
   end
 
@@ -53,6 +52,8 @@ ActiveRecord::Schema.define(version: 2020_06_28_230544) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "groupings", "groups"
+  add_foreign_key "groupings", "projects"
   add_foreign_key "groups", "users"
   add_foreign_key "projects", "groups"
   add_foreign_key "projects", "users", column: "author_id"
