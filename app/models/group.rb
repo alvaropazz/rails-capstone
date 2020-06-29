@@ -1,4 +1,5 @@
 class Group < ApplicationRecord
+  validates_presence_of :name
   belongs_to :user
   has_many :groupings, foreign_key: :group_id
   has_many :projects, through: :groupings
