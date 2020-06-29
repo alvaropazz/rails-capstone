@@ -22,7 +22,8 @@ class SessionsController < ApplicationController
   end
 
   private
-    def login(_user)
-      session[:user_id] = nil
-    end
+
+  def login(_user)
+    session[:user_id] = nil
+  end
 end
