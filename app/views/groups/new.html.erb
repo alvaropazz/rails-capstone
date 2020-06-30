@@ -16,10 +16,8 @@
     <%= form.text_field :name, required: true, placeholder: "Name", class:"submit-field" %>
     <br>
     <div class="file">
-      <label for="file-input" class="file-container">
-        Choose Icon
-      </label>
-      <%= form.file_field :icon, id:"file-input", required: true, class:"file-field" %>
+      <%= label_tag(:group_icon, "Choose Icon", class:"file-container") %>
+      <%= form.file_field :icon, required: true, class:"file-field" %>
     </div>
     <br>
     <%= form.submit "Save", class:"save-button" %>
