@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="back-icon">
+    <h2>
+    <%= link_to groups_path do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </h2>
+  </div>
+  <div class="section-title">
+    <h2 class="title"><%= @group.name %></h2>
+  </div>
+</header>
+
+<main class="container">
+  <div class="projects-all">
+    <div class="total-amount">
+      <p class="amount-description">  Total Hours: <%= @projects_grouped %></p>
+    </div>
+    <% @group_projects.each do |pr| %>
+      <div class ="group-list">
+        <p class="project-name"><%= pr.name %></p>
+        <span class="project-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+        <p class="project-amount"><%= pr.amount %></p>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="new">
+    <%= link_to "Add new", new_project_path, class: "save-button" %>
+  </div>
+</footer>

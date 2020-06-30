@@ -1,0 +1,13 @@
+<header class="header">
+  <div class="user-title">
+    <h2>Log In</h2>
+  </div>
+</header>
+
+<div class="user-form">
+  <%= form_with url: sessions_path do |user| %>
+  <%= user.text_field :name, autofocus: true, class:"submit-field" %>
+  <br>
+  <%= user.submit class:"save-button" %>
+  <% end %>
+</div>

@@ -1,0 +1,38 @@
+<header class="header">
+  <div class="back-icon">
+    <h2>
+    <%= link_to user_url(current_user) do %>
+      <i class="fas fa-bars"></i>
+    <% end %>
+  </h2>
+  </div>
+  <div class="section-title">
+    <h2>All Groups</h2>
+  </div>
+</header>
+  
+<main class="container">
+  <div class="group-all">
+    <% @groups.each do |pr| %>
+      <div class="group-list-general">
+        <div class="list-image">
+          <%= image_tag pr.icon.url(:thumb) %>
+        </div>
+        <div class ="group-description-general">
+          <div class="list-description">
+            <%= link_to group_path(pr) do %>
+              <p class="group-name"><%= pr.name %></p>
+            <% end %>
+            <span class="group-date"><%= pr.created_at.strftime('%d %B %Y - %H:%M') %></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
+  
+<footer class="footer">
+  <div class="create">
+    <%= link_to "New Group", new_group_path, class: "new-group" %> 
+  </div>
+</footer>

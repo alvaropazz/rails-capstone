@@ -13,3 +13,140 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #006ba6;
+  color: #f8f7ff;
+  font-size: 40px;
+  height: 100vh;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #ffbc42;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+}
+
+.back-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+}
+
+.header {
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container {
+  height: 70%;
+  background-color: #f8f7ff;
+  color: #ffbc42;
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+}
+
+.footer {
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fas {
+  margin: 0 15px;
+}
+
+.submit-form {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.submit-field {
+  font-size: 40px;
+  width: 50%;
+  margin-bottom: 100px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.save-button {
+  font-size: 50px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #5fad56;
+  color: #ffbc42;
+}
+
+.submit-amount {
+  margin-bottom: 100px;
+  font-size: 40px;
+  border-radius: 15px;
+  padding: 20px;
+  width: 20%;
+  text-align: center;
+}
+
+.submit-options {
+  margin-bottom: 100px;
+  font-size: 40px;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #fff;
+  width: 50%;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+
+.user-title {
+  width: 100%;
+  font-size: 50px;
+}
+
+.file-field {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-container {
+  background-color: #d65108;
+  color: #f8f7ff;
+  padding: 20px;
+  font-size: 40px;
+  border-radius: 15px;
+}
+
+.file {
+  margin-bottom: 60px;
+}
