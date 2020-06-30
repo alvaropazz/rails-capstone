@@ -1,0 +1,39 @@
+// Place all the styles related to the Groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.group-all {
+  height: 95%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  overflow: auto;
+}
+
+.group-list {
+  margin-bottom: 25px;
+  background-color: white;
+  color: #d65108;
+}
+
+.group-list-general {
+  margin-bottom: 25px;
+  background-color: white;
+  color: #d65108;
+  display: flex;
+  padding: 20px;
+}
+
+.group-description {
+  display: flex;
+  align-items: center;
+}
+
+.list-image {
+  flex-basis: 30%;
+}
+
+.group-description-general {
+  flex-basis: 70%;
+}

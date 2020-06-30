@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="back-icon">
+    <h2>
+    <%= link_to user_url(current_user) do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </h2>
+  </div>
+  <div class="section-title">
+    <h2>New Project</h2>
+  </div>
+</header>
+
+<main class="submit-form">
+  <%= form_with model: @project do |x| %>
+    <h3 class="submit-subtitles">Name:</h3>
+    <%= x.text_field :name, required: true, class:"submit-field" %>
+    <br>
+    <h3 class="submit-subtitles">Group:</h3>
+    <%= x.collection_select(:group_id, current_user.groups, :id, :name, {prompt: true}, {class: "submit-options"})%>
+    <br>
+    <h3 class="submit-subtitles">Number of hours:</h3>
+    <%= x.number_field :amount, required: true, class: "submit-amount" %>
+    <br>
+    <%= x.submit "Save", class:"save-button" %>
+    <% @project.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  <% end %>
+</main>

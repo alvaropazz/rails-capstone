@@ -1,0 +1,38 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.profile-menu {
+  border: 5px solid white;
+  border-radius: 15px;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  font-size: 80px;
+}
+
+.user-header {
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-container {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  font-size: 60px;
+  justify-content: space-evenly;
+}
+
+.user-container a {
+  color: #f59f00;
+  font-weight: 600;
+}

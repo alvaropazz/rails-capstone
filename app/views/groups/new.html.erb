@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="back-icon">
+    <h2>
+    <%= link_to user_url(current_user) do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </h2>
+  </div>
+  <div class="section-title">
+    <h2>New Group</h2>
+  </div>
+</header>
+
+<main class="submit-form">
+  <%= form_for @group, url: groups_path, html: { multipart: true } do |form| %>
+    <%= form.text_field :name, required: true, placeholder: "Name", class:"submit-field" %>
+    <br>
+    <div class="file">
+      <%= label_tag(:group_icon, "Choose Icon", class:"file-container") %>
+      <%= form.file_field :icon, required: true, class:"file-field" %>
+    </div>
+    <br>
+    <%= form.submit "Save", class:"save-button" %>
+    <% @group.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  <% end %>
+</main>
